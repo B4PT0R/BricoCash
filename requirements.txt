@@ -1,1 +1,1 @@
-streamlit_input_box
+streamlit-input-box
