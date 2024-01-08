@@ -57,7 +57,7 @@ st.header("Brico Cash Yvetot vous souhaite la bienvenue !")
 
 st.write("---")
 
-st.write("Vous cherchez un rayon ?")
+st.subheader("Vous cherchez un rayon ?")
 product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()])
 
 if product and (product in state.locations):
