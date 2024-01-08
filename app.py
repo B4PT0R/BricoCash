@@ -10,6 +10,8 @@ def root_join(*args):
 
 state=st.session_state
 
+st.text("version 1.0")
+
 if not 'locations' in state:
     with open('locations.json','r') as f:
         state.locations=json.load(f)
