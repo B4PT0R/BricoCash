@@ -2,11 +2,11 @@ import streamlit as st
 import os
 import json, toml
 import base64
+from streamlit_input_box import input_box
 
 _root_=os.path.dirname(os.path.abspath(__file__))
 def root_join(*args):
     return os.path.join(_root_,*args)
-
 
 state=st.session_state
 
@@ -62,6 +62,11 @@ product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()
 
 if product and (product in state.locations):
     st.write(f"Vous trouverez ce produit {state.locations[product]}.")
+
+st.subheader("Consulter un plan :")
+with st.expander("Cliquez pour ouvrir le plan."):
+    st.image(root_join("app_images/plan.png"))
+    
 
 
 
