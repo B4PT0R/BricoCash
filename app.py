@@ -1,6 +1,6 @@
 import streamlit as st
 import os
-import json
+import json, toml
 import base64
 
 _root_=os.path.dirname(os.path.abspath(__file__))
@@ -15,6 +15,11 @@ st.text("v0.1")
 if not 'locations' in state:
     with open('locations.json','r') as f:
         state.locations=json.load(f)
+
+if not 'theme' in state:
+    with open(root_join(".streamlit/config.toml")) as f:
+        data=toml.load(f)
+        state.theme=data['theme']
 
 def vspace():
     return st.markdown("""<p><br></p>""",unsafe_allow_html=True)
@@ -44,7 +49,7 @@ def display_centered_image(image_path, **img_css_styles):
     # Display the image as base64
     st.markdown(f"<div class='centered-image-div'><img src='data:image/png;base64,{base64_image}' style='{img_style_string}'></div>", unsafe_allow_html=True)
 
-display_centered_image(root_join("app_images/bricocash_logo.png"),width='220px',height='150px')
+display_centered_image(root_join("app_images/bricocash_logo.png"),width='250px',height='150px')
 
 st.write("---")
 
@@ -53,9 +58,7 @@ st.header("Brico Cash Yvetot vous souhaite la bienvenue !")
 st.write("---")
 
 st.write("Vous cherchez un rayon ?")
-product=st.selectbox(label="Type de produit",options=["","peinture","quincaillerie","électro-portatif"])
-
-
+product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()])
 
 if product and (product in state.locations):
     st.write(f"Vous trouverez ce produit {state.locations[product]}.")
