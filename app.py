@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import json, toml
 import base64
-from streamlit_input_box import input_box
 
 _root_=os.path.dirname(os.path.abspath(__file__))
 def root_join(*args):
@@ -66,7 +65,7 @@ if product and (product in state.locations):
 st.subheader("Consulter un plan :")
 with st.expander("Cliquez pour ouvrir le plan."):
     st.image(root_join("app_images/plan.png"))
-    
+
 
 
 
