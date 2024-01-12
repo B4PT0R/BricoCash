@@ -116,7 +116,7 @@ def make_promo():
             if promo.title:
                 st.subheader(promo.title)
             if promo.image:
-                display_centered_image(promo.image,height=300,width=300)
+                display_centered_image(promo.image,width='75%')
             if promo.content:
                 st.write(promo.content)
             if promo.price:
