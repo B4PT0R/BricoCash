@@ -89,7 +89,7 @@ e=st.empty()
 
 if state.page=="Accueil":
     with e.container():
-        make_welcome
+        make_welcome()
 elif state.page=="test":
     with e.container():
         make_content()
