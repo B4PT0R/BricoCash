@@ -102,8 +102,23 @@ def make_content():
         st.info("Votre produit se trouve: ICI")
 
     st.write('---')
-    st.subheader("Recherche par secteurs/rayon")
+    st.subheader("Rechercher par libellé")
+    st.text_input("Entrez tout ou partie du nom du produit.",key="Name")
+    if 'Name' in state and state.name:
+        results=search(state.name)
+        st.write(results)
+
+    st.write('---')
+
     product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()])
+
+    def search(query):
+        results=[]
+        for prod in state.data.produits:
+            if query.lower in prod.lower:
+                results.append[prod]
+        return results
+
 
     if product and (product in state.locations):
         st.write(f"Vous trouverez ce produit {state.locations[product]}.")
