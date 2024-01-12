@@ -25,8 +25,8 @@ if not 'theme' in state:
 if not 'page' in state:
     state.page='Accueil'
 
-if not 'promos' in state:
-    state.promos=objdict.load(_file=root_join("app_data/promos.json")).promos
+if not 'data' in state:
+    state.data=objdict.load(_file=root_join("app_data/data.json"))
 
 
 #............Utility functions----------------
@@ -111,7 +111,7 @@ def make_content():
 def make_promo():
     st.subheader("Profitez toute l'année de nos offres à prix imbattable !")
     st.write("---")
-    for promo in state.promos:
+    for promo in state.data.promos:
         with st.container(border=True):
             if promo.title:
                 st.subheader(promo.title)
