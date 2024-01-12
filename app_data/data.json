@@ -18,5 +18,29 @@
             "content":"Des réductions à gogo jusqu'à -65% ! Venez vite !",
             "price":"123,45€"
         }
+    ],
+
+    "produits":[
+        "Abattants WC et accessoires",
+        "Abrasifs",
+        "Absorbeurs d'humidité",
+        "Accessoires d'arrosage",
+        "Accessoires bardeaux",
+        "Accessoires butane",
+        "Accessoires câbles",
+        "Accessoires chaudières",
+        "Accessoires chauffe-eau",
+        "Accessoires climatisation",
+        "Accessoires cloison",
+        "Accessoires cordage et arrimage",
+        "Accessoires cuisines",
+        "Accessoires douches",
+        "Accessoires électroportatif",
+        "Accessoires électroportatif Bosch",
+        "Accessoires fermeture",
+        "Accessoires finition sol",
+        "Accessoires gaz naturel",
+        "Accessoires mise à la terre",
+        "Accessoires nettoyeurs haute pression"
     ]
 }
