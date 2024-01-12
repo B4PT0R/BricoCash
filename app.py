@@ -61,7 +61,7 @@ def display_centered_image(image_path, **img_css_styles):
 def make_welcome():
     display_centered_image(root_join("app_images/bricocash_logo.png"),width='250px',height='150px')
     st.write("---")
-    st.header("Brico Cash Yvetot vous souhaite la bienvenue !")
+    st.header("Le Brico Cash d'Yvetot et toute sont équipe vous souhaite la bienvenue !")
     st.write("---")
 
     st.subheader("Comment utiliser l'appli:")
