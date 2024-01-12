@@ -82,16 +82,17 @@ def make_content():
     st.write('---')
     st.subheader("Recherche par code EAN (code barre)")
     def on_EAN_change():
-        with p1:
-            if len(state.EAN)!=13:
+        if len(state.EAN)!=13:
+            with p1:
                 st.warning("Le code EAN doit comporter 13 chiffres.")
-            else:
+        else:
+            with p1:
                 st.success("Format de code valide.")
     st.text_input("Entrez le code à EAN à 13 chiffres:",key="EAN",on_change=on_EAN_change)
     p1=st.empty()
 
     def on_EAN_search():
-        st.toast(":sad: Votre EAN n'existe pas!")
+        pass
 
     st.button("Rechercher", on_click=on_EAN_search)
     st.write('---')
