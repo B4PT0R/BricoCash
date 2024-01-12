@@ -69,11 +69,18 @@ def make_menu():
     with st.sidebar:
         if st.button("Accueil",use_container_width=True):
             state.page="Accueil"
-        if st.button("test",use_container_width=True):
-            state.page="test"
+        if st.button("Rechercher",use_container_width=True):
+            state.page="recherche"
 
 def make_content():
-    st.subheader("Vous cherchez un rayon ?")
+    st.subheader("Vous cherchez un produit ?")
+    st.write('---')
+    st.write("Recherche par code EAN (code barre)")
+    st.text_input("Entrez le code à EAN à 13 chiffres:",key="EAN")
+    def on_EAN_search():
+        ean=state.EAN
+        
+    st.button("Rechercher", on_click=on_EAN_search)
     product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()])
 
     if product and (product in state.locations):
