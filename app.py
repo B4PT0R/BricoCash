@@ -77,9 +77,10 @@ def make_content():
     st.write('---')
     st.write("Recherche par code EAN (code barre)")
     st.text_input("Entrez le code à EAN à 13 chiffres:",key="EAN")
+    
     def on_EAN_search():
         ean=state.EAN
-        
+
     st.button("Rechercher", on_click=on_EAN_search)
     product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()])
 
