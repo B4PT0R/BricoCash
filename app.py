@@ -11,7 +11,7 @@ def root_join(*args):
 state=st.session_state
 
 st.set_page_config(page_title="Brico Cash", page_icon=root_join("app_images/bricocash_logo.png"), initial_sidebar_state='collapsed')
-st.text("©Baptiste Ferrand v0.1")
+st.caption("©Brico Cash Yvetot 2024 v0.1")
 
 if not 'locations' in state:
     with open('locations.json','r') as f:
