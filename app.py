@@ -86,11 +86,10 @@ def make_content():
     if 'EAN' in state and state.EAN:
         if len(state.EAN)!=13 and not all(c in [str(i) for i in range(10)] for c in state.EAN):
             st.warning("Le code EAN doit comporter 13 chiffres.")
+    st.button("Rechercher", key="EAN_search")
+    if 'EAN_search' in state and state.EAN_search:
+        st.info("Votre produit se trouve: ICI")
 
-    def on_EAN_search():
-        pass
-
-    st.button("Rechercher", on_click=on_EAN_search)
     st.write('---')
     st.subheader("Recherche par secteurs/rayon")
     product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()])
