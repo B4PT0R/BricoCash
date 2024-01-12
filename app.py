@@ -70,14 +70,14 @@ def make_menu():
         if st.button("Accueil",use_container_width=True):
             state.page="Accueil"
         if st.button("Rechercher",use_container_width=True):
-            state.page="recherche"
+            state.page="Recherche"
 
 def make_content():
     st.subheader("Vous cherchez un produit ?")
     st.write('---')
     st.write("Recherche par code EAN (code barre)")
     st.text_input("Entrez le code à EAN à 13 chiffres:",key="EAN")
-    
+
     def on_EAN_search():
         ean=state.EAN
 
@@ -98,7 +98,7 @@ e=st.empty()
 if state.page=="Accueil":
     with e.container():
         make_welcome()
-elif state.page=="test":
+elif state.page=="Recherche":
     with e.container():
         make_content()
 
