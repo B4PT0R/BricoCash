@@ -104,8 +104,14 @@ def make_plan():
 
 
 make_menu()
-e=st.empty()
 
+c1,c2=st.columns([10,90])
+with c1:
+    st.image(root_join("app_images/bricocash_logo.png"),width=50)
+with c2:
+    st.write("L'appli brico")
+
+e=st.empty()
 if state.page=="Accueil":
     with e.container(height=1000):
         make_welcome()
