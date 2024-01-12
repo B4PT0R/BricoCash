@@ -108,11 +108,7 @@ def make_plan():
 
 make_menu()
 
-c1,c2=st.columns([10,90])
-with c1:
-    st.image(root_join("app_images/bricocash_logo.png"),width=70)
-with c2:
-    st.subheader(state.page)
+st.subheader(state.page)
 
 e=st.empty()
 with e.container(height=800):
@@ -123,5 +119,4 @@ with e.container(height=800):
     elif state.page=="Plan":
         make_plan()
 
-st.write('---')
 st.caption("©Brico Cash Yvetot 2024 v0.1")
