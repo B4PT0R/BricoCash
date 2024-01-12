@@ -91,7 +91,7 @@ def make_content():
     p1=st.empty()
 
     def on_EAN_search():
-        ean=state.EAN
+        st.toast(":sad: Votre EAN n'existe pas!")
 
     st.button("Rechercher", on_click=on_EAN_search)
     st.write('---')
