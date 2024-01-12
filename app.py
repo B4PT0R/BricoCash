@@ -71,22 +71,28 @@ def make_menu():
             state.page="Accueil"
         if st.button("Rechercher",use_container_width=True):
             state.page="Recherche"
+        if st.button("Plan du magasin",use_container_width=True):
+            state.page="Plan"
 
 def make_content():
-    st.subheader("Vous cherchez un produit ?")
+    st.header("Vous cherchez un produit ?")
     st.write('---')
-    st.write("Recherche par code EAN (code barre)")
+    st.subheader("Recherche par code EAN (code barre)")
     st.text_input("Entrez le code à EAN à 13 chiffres:",key="EAN")
 
     def on_EAN_search():
         ean=state.EAN
 
     st.button("Rechercher", on_click=on_EAN_search)
+    st.write('---')
+    st.subheader("Recherche par secteurs/rayon")
     product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()])
 
     if product and (product in state.locations):
         st.write(f"Vous trouverez ce produit {state.locations[product]}.")
 
+
+def make_plan()
     st.subheader("Consulter un plan :")
     with st.expander("Cliquez pour ouvrir le plan."):
         st.image(root_join("app_images/plan.png"))
@@ -101,4 +107,7 @@ if state.page=="Accueil":
 elif state.page=="Recherche":
     with e.container():
         make_content()
+elif state.page=="Plan":
+    with e.container():
+        make_plan()
 
