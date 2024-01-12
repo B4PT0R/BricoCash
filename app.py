@@ -3,6 +3,7 @@ import os
 import json, toml
 import base64
 from objdict_bf import objdict
+import time
 
 _root_=os.path.dirname(os.path.abspath(__file__))
 def root_join(*args):
@@ -88,6 +89,7 @@ def make_content():
         else:
             with p1:
                 st.success("Format de code valide.")
+        time.sleep(3)
     st.text_input("Entrez le code à EAN à 13 chiffres:",key="EAN",on_change=on_EAN_change)
     p1=st.empty()
 
