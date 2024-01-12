@@ -107,13 +107,15 @@ make_menu()
 e=st.empty()
 
 if state.page=="Accueil":
-    with e.container():
+    with e.container(height=500):
         make_welcome()
 elif state.page=="Recherche":
-    with e.container():
+    with e.container(heigth=500):
         make_content()
 elif state.page=="Plan":
-    with e.container():
+    with e.container(height=500):
         make_plan()
 
+vspace()
+st.write('---')
 st.caption("©Brico Cash Yvetot 2024 v0.1")
