@@ -5,6 +5,18 @@
             "image":"./app_images/bricocash_logo.png",
             "content":"Des réductions à gogo jusqu'à -65% ! Venez vite !",
             "price":123
+        },
+        {
+            "title":"Soldes !!!",
+            "image":"./app_images/bricocash_logo.png",
+            "content":"Des réductions à gogo jusqu'à -65% ! Venez vite !",
+            "price":123
+        },
+        {
+            "title":"Soldes !!!",
+            "image":"./app_images/bricocash_logo.png",
+            "content":"Des réductions à gogo jusqu'à -65% ! Venez vite !",
+            "price":123
         }
     ]
 }
