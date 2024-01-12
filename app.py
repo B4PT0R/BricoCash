@@ -105,11 +105,11 @@ def make_plan():
 
 make_menu()
 
-c1,c2=st.columns(2)
+c1,c2=st.columns([20,80])
 with c1:
     st.image(root_join("app_images/bricocash_logo.png"),width=50)
 with c2:
-    st.caption("L'appli brico jaune et bleue !")
+    st.subheader(state.page)
 
 e=st.empty()
 with e.container(height=800):
