@@ -85,7 +85,7 @@ def make_menu():
         if st.button("Plan du magasin",use_container_width=True):
             state.page="Plan"
             st.rerun()
-        if st.button("Offres promotionnelles",use_container_width=True):
+        if st.button("Promos",use_container_width=True):
             state.page="Promos"
             st.rerun()
 
@@ -141,7 +141,7 @@ with e.container(height=800):
         make_welcome()
     elif state.page=="Recherche":
         make_content()
-    elif state.page=="Offres promotionnelles":
+    elif state.page=="Promos":
         make_promo()
     elif state.page=="Plan":
         make_plan()
