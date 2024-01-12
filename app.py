@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import json, toml
 import base64
+from objdict_bf import objdict
 
 _root_=os.path.dirname(os.path.abspath(__file__))
 def root_join(*args):
@@ -19,6 +20,11 @@ if not 'theme' in state:
     with open(root_join(".streamlit/config.toml")) as f:
         data=toml.load(f)
         state.theme=data['theme']
+
+if not 'page' in state:
+    state.page='Accueil'
+
+#............Utility functions----------------
 
 def vspace():
     return st.markdown("""<p><br></p>""",unsafe_allow_html=True)
@@ -48,23 +54,46 @@ def display_centered_image(image_path, **img_css_styles):
     # Display the image as base64
     st.markdown(f"<div class='centered-image-div'><img src='data:image/png;base64,{base64_image}' style='{img_style_string}'></div>", unsafe_allow_html=True)
 
-display_centered_image(root_join("app_images/bricocash_logo.png"),width='250px',height='150px')
+#----------------------Layout functions---------------------
 
-st.write("---")
 
-st.header("Brico Cash Yvetot vous souhaite la bienvenue !")
+def make_welcome():
+    display_centered_image(root_join("app_images/bricocash_logo.png"),width='250px',height='150px')
+    st.write("---")
+    st.header("Brico Cash Yvetot vous souhaite la bienvenue !")
+    st.write("---")
 
-st.write("---")
+    st.write("Naviguez sur le site à l'aide du bandeau latéral.")
 
-st.subheader("Vous cherchez un rayon ?")
-product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()])
+def make_menu():
+    with st.sidebar:
+        if st.button("Accueil"):
+            state.page="Accueil"
+        if st.button("test"):
+            state.page="test"
 
-if product and (product in state.locations):
-    st.write(f"Vous trouverez ce produit {state.locations[product]}.")
+def make_content():
+    st.subheader("Vous cherchez un rayon ?")
+    product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()])
 
-st.subheader("Consulter un plan :")
-with st.expander("Cliquez pour ouvrir le plan."):
-    st.image(root_join("app_images/plan.png"))
+    if product and (product in state.locations):
+        st.write(f"Vous trouverez ce produit {state.locations[product]}.")
+
+    st.subheader("Consulter un plan :")
+    with st.expander("Cliquez pour ouvrir le plan."):
+        st.image(root_join("app_images/plan.png"))
+
+
+make_menu()
+e=st.empty()
+
+if state.page=="Accueil":
+    with e.container():
+        make_welcome
+elif state.page=="test":
+    with e.container():
+        make_content()
+
 
 
 
