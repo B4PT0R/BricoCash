@@ -105,7 +105,7 @@ def make_plan():
 
 make_menu()
 
-c1,c2=st.columns()
+c1,c2=st.columns(2)
 with c1:
     st.image(root_join("app_images/bricocash_logo.png"),width=50)
 with c2:
