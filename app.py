@@ -107,13 +107,13 @@ make_menu()
 e=st.empty()
 
 if state.page=="Accueil":
-    with e.container(height=500):
+    with e.container(height=1000):
         make_welcome()
 elif state.page=="Recherche":
-    with e.container(height=500):
+    with e.container(height=1000):
         make_content()
 elif state.page=="Plan":
-    with e.container(height=500):
+    with e.container(height=1000):
         make_plan()
 
 vspace()
