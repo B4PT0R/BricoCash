@@ -10,6 +10,7 @@ def root_join(*args):
 
 state=st.session_state
 
+st.set_page_config("Brico Cash", page_icon=root_join("app_images/bricocash_logo.png"), initial_sidebar_state='collapsed')
 st.text("©Baptiste Ferrand v0.1")
 
 if not 'locations' in state:
@@ -63,7 +64,9 @@ def make_welcome():
     st.header("Brico Cash Yvetot vous souhaite la bienvenue !")
     st.write("---")
 
-    st.write("Naviguez sur le site à l'aide du bandeau latéral.")
+    st.subheader("Comment utiliser l'appli:")
+    st.write("Cette applcation a pour but de vous aider à trouver le produit qui vous intéresse dans le magasin.")
+    st.write("Naviguez sur le site à l'aide du bandeau latéral dépliable.")
 
 def make_menu():
     with st.sidebar:
