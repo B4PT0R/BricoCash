@@ -94,7 +94,3 @@ elif state.page=="test":
     with e.container():
         make_content()
 
-
-
-
-
