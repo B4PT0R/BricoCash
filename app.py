@@ -110,7 +110,7 @@ if state.page=="Accueil":
     with e.container(height=500):
         make_welcome()
 elif state.page=="Recherche":
-    with e.container(heigth=500):
+    with e.container(height=500):
         make_content()
 elif state.page=="Plan":
     with e.container(height=500):
