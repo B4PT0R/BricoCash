@@ -82,16 +82,10 @@ def make_content():
     st.header("Vous cherchez un produit ?")
     st.write('---')
     st.subheader("Recherche par code EAN (code barre)")
-    def on_EAN_change():
-        if len(state.EAN)!=13:
-            with p1:
-                st.warning("Le code EAN doit comporter 13 chiffres.")
-        else:
-            with p1:
-                st.success("Format de code valide.")
-        time.sleep(2)
-    st.text_input("Entrez le code à EAN à 13 chiffres:",key="EAN",on_change=on_EAN_change)
-    p1=st.empty()
+    st.text_input("Entrez le code à EAN à 13 chiffres:",key="EAN")
+    if 'EAN' in state:
+        if len(state.EAN)!=13 and all(c in [str(i) for i in range(10)] for c in state.EAN):
+            st.warning("Le code EAN doit comporter 13 chiffres.")
 
     def on_EAN_search():
         pass
