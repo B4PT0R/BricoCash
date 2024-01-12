@@ -65,8 +65,8 @@ def make_welcome():
     st.write("---")
 
     st.subheader("Comment utiliser l'appli:")
-    st.write("Cette applcation a pour but de vous aider à trouver le produit qui vous intéresse dans le magasin.")
-    st.write("Naviguez sur le site à l'aide du bandeau latéral dépliable en cliquant sur le petit chevron en haut à gauche de la page.")
+    st.write("Cette application a pour but de vous aider à trouver le produit qui vous intéresse dans le magasin.")
+    st.write("Pour naviguez sur les différentes pages de l'appli, dépliez le bandeau latéral en cliquant sur le petit chevron en haut à gauche de la page.")
 
 def make_menu():
     with st.sidebar:
