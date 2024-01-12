@@ -67,9 +67,9 @@ def make_welcome():
 
 def make_menu():
     with st.sidebar:
-        if st.button("Accueil"):
+        if st.button("Accueil",use_container_width=True):
             state.page="Accueil"
-        if st.button("test"):
+        if st.button("test",use_container_width=True):
             state.page="test"
 
 def make_content():
