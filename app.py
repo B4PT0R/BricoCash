@@ -12,7 +12,6 @@ def root_join(*args):
 state=st.session_state
 
 st.set_page_config(page_title="Brico Cash", page_icon=root_join("app_images/bricocash_logo.png"), initial_sidebar_state='collapsed')
-st.caption("©Brico Cash Yvetot 2024 v0.1")
 
 if not 'locations' in state:
     with open('locations.json','r') as f:
@@ -117,3 +116,4 @@ elif state.page=="Plan":
     with e.container():
         make_plan()
 
+st.caption("©Brico Cash Yvetot 2024 v0.1")
