@@ -10,7 +10,7 @@ def root_join(*args):
 
 state=st.session_state
 
-st.text("v0.1")
+st.text("©Baptiste Ferrand v0.1")
 
 if not 'locations' in state:
     with open('locations.json','r') as f:
