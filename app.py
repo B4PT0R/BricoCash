@@ -105,9 +105,9 @@ def make_plan():
 
 make_menu()
 
-c1,c2=st.columns([20,80])
+c1,c2=st.columns([15,85])
 with c1:
-    st.image(root_join("app_images/bricocash_logo.png"),width=50)
+    st.image(root_join("app_images/bricocash_logo.png"),width=70)
 with c2:
     st.subheader(state.page)
 
