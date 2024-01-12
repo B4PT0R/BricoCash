@@ -109,19 +109,16 @@ c1,c2=st.columns([10,90])
 with c1:
     st.image(root_join("app_images/bricocash_logo.png"),width=50)
 with c2:
-    st.write("L'appli brico")
+    st.write("L'appli brico jaune et bleue !")
 
 e=st.empty()
-if state.page=="Accueil":
-    with e.container(height=1000):
+with e.container(height=800):
+    if state.page=="Accueil":
         make_welcome()
-elif state.page=="Recherche":
-    with e.container(height=1000):
+    elif state.page=="Recherche":
         make_content()
-elif state.page=="Plan":
-    with e.container(height=1000):
+    elif state.page=="Plan":
         make_plan()
 
-vspace()
 st.write('---')
 st.caption("©Brico Cash Yvetot 2024 v0.1")
