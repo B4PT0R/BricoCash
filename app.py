@@ -72,10 +72,13 @@ def make_menu():
     with st.sidebar:
         if st.button("Accueil",use_container_width=True):
             state.page="Accueil"
+            st.rerun()
         if st.button("Rechercher",use_container_width=True):
             state.page="Recherche"
+            st.rerun()
         if st.button("Plan du magasin",use_container_width=True):
             state.page="Plan"
+            st.rerun()
 
 def make_content():
     st.header("Vous cherchez un produit ?")
