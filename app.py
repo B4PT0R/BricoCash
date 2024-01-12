@@ -127,7 +127,11 @@ def make_promo():
 
 def make_plan():
     st.subheader("Consulter un plan :")
-    with st.expander("Cliquez pour ouvrir le plan."):
+    st.write("Plan du magasin:")
+    with st.expander("Cliquez ici pour ouvrir le plan."):
+        st.image(root_join("app_images/plan.png"))
+    st.write("Plan de la section matériaux (Rue du vieux Sainte-Marie):")
+    with st.expander("Cliquez ici pour ouvrir le plan."):
         st.image(root_join("app_images/plan.png"))
 
 
