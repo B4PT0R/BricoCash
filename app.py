@@ -70,6 +70,7 @@ def make_welcome():
 
 def make_menu():
     with st.sidebar:
+        display_centered_image(root_join("app_images/bricocash_logo.png"),width='70px',height='60px')
         if st.button("Accueil",use_container_width=True):
             state.page="Accueil"
             st.rerun()
