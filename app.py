@@ -26,7 +26,7 @@ if not 'page' in state:
     state.page='Accueil'
 
 if not 'promos' in state:
-    state.promos=objdict.load(_file=root_join("promos.json")).promos
+    state.promos=objdict.load(_file=root_join("app_data/promos.json")).promos
 
 
 #............Utility functions----------------
