@@ -25,6 +25,10 @@ if not 'theme' in state:
 if not 'page' in state:
     state.page='Accueil'
 
+if not 'promos' in state:
+    state.promos=objdict.load(_file=root_join("promos.json")).promos
+
+
 #............Utility functions----------------
 
 def vspace():
@@ -81,6 +85,9 @@ def make_menu():
         if st.button("Plan du magasin",use_container_width=True):
             state.page="Plan"
             st.rerun()
+        if st.button("Offres promotionnelles",use_container_width=True):
+            state.page="Promos"
+            st.rerun()
 
 def make_content():
     st.header("Vous cherchez un produit ?")
@@ -101,6 +108,22 @@ def make_content():
     if product and (product in state.locations):
         st.write(f"Vous trouverez ce produit {state.locations[product]}.")
 
+def make_promo():
+    st.subheader("Profitez toute l'année de nos offres à prix imbattable !")
+    st.write("---")
+    for promo in state.promos:
+        with st.container(border=True):
+            if promo.title:
+                st.subheader(promo.title)
+            if promo.image:
+                st.image(promo.image)
+            if promo.content:
+                st.write(promo.content)
+            if promo.price:
+                st.metric("Prix:",promo.price)
+    
+
+
 
 def make_plan():
     st.subheader("Consulter un plan :")
@@ -118,6 +141,8 @@ with e.container(height=800):
         make_welcome()
     elif state.page=="Recherche":
         make_content()
+    elif state.page=="Offres promotionnelles":
+        make_promo()
     elif state.page=="Plan":
         make_plan()
 
