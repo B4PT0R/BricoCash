@@ -92,7 +92,7 @@ def make_content():
         st.write(f"Vous trouverez ce produit {state.locations[product]}.")
 
 
-def make_plan()
+def make_plan():
     st.subheader("Consulter un plan :")
     with st.expander("Cliquez pour ouvrir le plan."):
         st.image(root_join("app_images/plan.png"))
