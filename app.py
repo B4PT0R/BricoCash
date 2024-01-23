@@ -26,7 +26,7 @@ if not 'page' in state:
     state.page='Accueil'
 
 if not 'data' in state:
-    state.data=objdict.load(_file=root_join("app_data/data.json"))
+    state.data=objdict.load(_file=root_join("app_data/data.json"),_use_default=True,_default=None)
 
 
 #............Utility functions----------------
@@ -102,23 +102,21 @@ def make_content():
         st.info("Votre produit se trouve: ICI")
 
     st.write('---')
+    def search(query):
+        results=[]
+        for prod in state.data.produits:
+            if query.lower() in prod.lower():
+                results.append(prod)
+        return results
     st.subheader("Rechercher par libellé")
-    st.text_input("Entrez tout ou partie du nom du produit.",key="Name")
-    if 'Name' in state and state.name:
+    st.text_input("Entrez tout ou partie du nom du produit.",key="name")
+    if 'name' in state and state.name:
         results=search(state.name)
         st.write(results)
 
     st.write('---')
 
     product=st.selectbox(label="Type de produit",options=["",*state.locations.keys()])
-
-    def search(query):
-        results=[]
-        for prod in state.data.produits:
-            if query.lower in prod.lower:
-                results.append[prod]
-        return results
-
 
     if product and (product in state.locations):
         st.write(f"Vous trouverez ce produit {state.locations[product]}.")
@@ -130,8 +128,10 @@ def make_promo():
         with st.container(border=True):
             if promo.title:
                 st.subheader(promo.title)
-            if promo.image:
-                display_centered_image(promo.image,width='75%')
+            if promo.image_file:
+                display_centered_image(promo.image_file,width='75%')
+            if promo.image_url:
+                st.image(promo.image_url)
             if promo.content:
                 st.write(promo.content)
             if promo.price:

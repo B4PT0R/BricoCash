@@ -2,21 +2,15 @@
     "promos": [
         {
             "title":"Soldes !!!",
-            "image":"./app_images/bricocash_logo.png",
+            "image_file":"./app_images/bricocash_logo.png",
             "content":"Des réductions à gogo jusqu'à -65% ! Venez vite !",
             "price":"123,45€"
         },
         {
-            "title":"Soldes !!!",
-            "image":"./app_images/bricocash_logo.png",
-            "content":"Des réductions à gogo jusqu'à -65% ! Venez vite !",
-            "price":"123,45€"
-        },
-        {
-            "title":"Soldes !!!",
-            "image":"./app_images/bricocash_logo.png",
-            "content":"Des réductions à gogo jusqu'à -65% ! Venez vite !",
-            "price":"123,45€"
+            "title":"Vacances de rêve !",
+            "image_url":"https://www.abritel.fr/guides-voyage/wp-content/uploads/2s9ORNwtuUa0PSCnTwSnOe/18f882e2c7651c11a2724a8997d82118/This_is_an_image_of_a_beach_with_calm_blue_water_at_sunset.jpg",
+            "content":"Profitez de vacances sompteuses avec Brico Cash, le tout à vos frais.",
+            "price":"1 semaine de salaire / sem de vacance."
         }
     ],
 
